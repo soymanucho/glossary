@@ -26,6 +26,11 @@ class GlossaryController extends Controller
       $glossaries = Glossary::where('user_id',$user->id)->with('subjects')->get();
       return view('glossary.byUser',compact('glossaries','user'));
     }
+    public function search($text)
+    {
+      $glossaries = Glossary::where('user_id',$user->id)->with('subjects')->get();
+      return view('glossary.byUser',compact('glossaries','user'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +42,7 @@ class GlossaryController extends Controller
       $lenguages = Lenguage::all();
       $subjects = Subject::all();
       // $terms = Term::all();
-      return view('glossary.newGlossary',compact('lenguages','subject'));
+      return view('glossary.newGlossary',compact('lenguages','subjects'));
     }
 
     /**
