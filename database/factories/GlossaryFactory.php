@@ -1,0 +1,14 @@
+<?php
+
+/* @var $factory \Illuminate\Database\Eloquent\Factory */
+
+use glossary\Glossary;
+use glossary\User;
+use Faker\Generator as Faker;
+
+$factory->define(Glossary::class, function (Faker $faker) {
+    return [
+      'title'=> $faker->sentence(2,true),
+      'user_id'=> User::inRandomOrder()->first(),
+    ];
+});
