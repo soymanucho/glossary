@@ -1,8 +1,8 @@
 <?php
 
-namespace mini-glossary\Http\Controllers\Auth;
+namespace glossary\Http\Controllers\Auth;
 
-use mini-glossary\Http\Controllers\Controller;
+use glossary\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        mini-glossary\Providers\AppServiceProvider::class,
-        mini-glossary\Providers\AuthServiceProvider::class,
-        // mini-glossary\Providers\BroadcastServiceProvider::class,
-        mini-glossary\Providers\EventServiceProvider::class,
-        mini-glossary\Providers\RouteServiceProvider::class,
+        glossary\Providers\AppServiceProvider::class,
+        glossary\Providers\AuthServiceProvider::class,
+        // glossary\Providers\BroadcastServiceProvider::class,
+        glossary\Providers\EventServiceProvider::class,
+        glossary\Providers\RouteServiceProvider::class,
 
     ],
 

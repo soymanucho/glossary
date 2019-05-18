@@ -1,6 +1,6 @@
 <?php
 
-namespace mini-glossary\Providers;
+namespace glossary\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'mini-glossary\Model' => 'mini-glossary\Policies\ModelPolicy',
+        // 'glossary\Model' => 'glossary\Policies\ModelPolicy',
     ];
 
     /**

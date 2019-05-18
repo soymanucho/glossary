@@ -1,9 +1,9 @@
 <?php
 
-namespace mini-glossary\Http\Controllers\Auth;
+namespace glossary\Http\Controllers\Auth;
 
-use mini-glossary\User;
-use mini-glossary\Http\Controllers\Controller;
+use glossary\User;
+use glossary\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \mini-glossary\User
+     * @return \glossary\User
      */
     protected function create(array $data)
     {

@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => mini-glossary\User::class,
+            'model' => glossary\User::class,
         ],
 
         // 'users' => [

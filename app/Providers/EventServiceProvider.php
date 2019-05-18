@@ -1,6 +1,6 @@
 <?php
 
-namespace mini-glossary\Providers;
+namespace glossary\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;

@@ -1,6 +1,6 @@
 <?php
 
-namespace mini-glossary;
+namespace glossary;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

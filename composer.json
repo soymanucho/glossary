@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "mini-glossary\\": "app/"
+            "glossary\\": "app/"
         },
         "classmap": [
             "database/seeds",

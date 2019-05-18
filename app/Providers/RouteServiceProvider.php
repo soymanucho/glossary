@@ -1,6 +1,6 @@
 <?php
 
-namespace mini-glossary\Providers;
+namespace glossary\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'mini-glossary\Http\Controllers';
+    protected $namespace = 'glossary\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

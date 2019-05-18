@@ -35,7 +35,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => mini-glossary\User::class,
+        'model' => glossary\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [
