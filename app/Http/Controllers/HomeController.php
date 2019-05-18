@@ -3,6 +3,8 @@
 namespace glossary\Http\Controllers;
 
 use Illuminate\Http\Request;
+use glossary\Lenguage;
+use glossary\Glossary;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $lenguages = Lenguage::all();
+      $glossaries = Glossary::with('terms')->orderBy('created_at')->take(4)->get();
+      return view('home',compact('lenguages','glossaries'));
     }
 }

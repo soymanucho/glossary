@@ -3,6 +3,7 @@
 namespace glossary\Http\Controllers;
 
 use glossary\Translation;
+use glossary\Term;
 use Illuminate\Http\Request;
 
 class TranslationController extends Controller
@@ -44,9 +45,11 @@ class TranslationController extends Controller
      * @param  \glossary\Translation  $translation
      * @return \Illuminate\Http\Response
      */
-    public function show(Translation $translation)
+    public function show(Term $term)
     {
-        //
+      $term = Term::where('id',$term->id)->with('translations')->first();
+
+      return view('translation.show',compact('term'));
     }
 
     /**

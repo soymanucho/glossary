@@ -12,6 +12,6 @@ class TranslationsTableSeeder extends Seeder
      */
     public function run()
     {
-      factory(Translation::class, 250)->create();
+      factory(Translation::class, 100)->create();
     }
 }

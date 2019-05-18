@@ -13,11 +13,11 @@ class GlossaryTermsTableSeeder extends Seeder
      */
     public function run()
     {
-      $glossaries = Glossary::all();
+      $terms = Term::all();
 
-      Term::all()->each(function ($term) use ($glossaries) {
-          $term->glossaries()->attach(
-              $glossaries->random(rand(1, 3))->pluck('id')->toArray()
+      Glossary::all()->each(function ($glossary) use ($terms) {
+          $glossary->terms()->attach(
+              $terms->random(rand(3, 5))->pluck('id')->toArray()
           );
       });
     }

@@ -16,6 +16,7 @@ class CreateGlossariesTable extends Migration
         Schema::create('glossaries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->longText('description');
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
