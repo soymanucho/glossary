@@ -10,7 +10,7 @@ use glossary\Translation;
 class Term extends Model
 {
   protected $fillable = ['name','definition','lenguage_id'];
-  
+
   public function glossaries()
   {
      return $this->belongsToMany(Glossary::class)->withTimestamps();
@@ -21,6 +21,6 @@ class Term extends Model
   }
   public function lenguage()
   {
-     return $this->belongsTo(Lenguage::class);
+     return $this->belongsTo(Lenguage::class,'lenguage_id');
   }
 }

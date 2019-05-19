@@ -39,7 +39,7 @@
                   <h2>Terms:</h2>
                   @foreach ($glossary->terms as $term )
                     {{-- {{dd($term)}} --}}
-                    <h3><button class="btn btn-lg btn-info" href="{!! route('show-translation',compact('term')) !!}" data-toggle="tooltip" data-placement="left" title="Show translations"  >{{$term->name}}</button></h3>
+                    <h3><a class="btn btn-lg btn-info" href="{!! route('show-translation',compact('term')) !!}" data-toggle="tooltip" data-placement="left" title="Show translations"  >{{$term->name}}</a></h3>
                     <p>{{$term->definition}}</p>
                   @endforeach
 

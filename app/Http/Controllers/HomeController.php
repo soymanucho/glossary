@@ -26,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
       $lenguages = Lenguage::all();
-      $glossaries = Glossary::with('terms')->orderBy('created_at')->take(4)->get();
+      $glossaries = Glossary::with('terms')->with('terms.lenguage')->orderBy('glossaries.id','desc')->take(4)->get();
+      // dd($glossaries);
       return view('home',compact('lenguages','glossaries'));
     }
 }

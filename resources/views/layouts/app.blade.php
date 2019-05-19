@@ -19,20 +19,20 @@
       <div class="container">
         <header class="blog-header py-3">
           <div class="row nav flex-nowrap justify-content-between align-items-center">
-            <div class="col-1 pt-1">
-              <a class="btn btn-sm btn-outline-success fancybox" href="{!! route('new-glossary') !!}">Create new glossary</a>
+            <div class="col-lg-1 col-md-1 col-sm-1 pt-1">
+              <a class="btn btn-sm btn-outline-success fancybox" href="{!! route('new-glossary') !!}">Create glossary</a>
             </div>
-            <div class="col-5 text-center">
+            <div class="col-lg-5 col-md-2 col-sm-1 text-center">
               <a class="blog-header-logo text-dark" href="{!! route('home') !!}">Glossary</a>
             </div>
 
-            <div class="col-4 d-flex justify-content-end align-items-center">
+            <div class="col-lg-4 col-md-3 col-sm-1 d-flex justify-content-end align-items-center">
               <form class="form-inline" action="{!! route('search-glossary') !!}">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2 mt-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 mt-1" type="submit">Search</button>
               </form>
             </div>
-            <div class="col-2 d-flex justify-content-end align-items-center">
+            <div class="col-lg-2 col-md-1 col-sm-1 d-flex justify-content-end align-items-center">
 
               @if (Route::has('login'))
                   <div class="top-right links">
