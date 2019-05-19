@@ -5,19 +5,8 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       @foreach ($lenguages as $lenguage)
-        <a class="p-2 text-muted" href="#">{{$lenguage->name}}</a>
+        <a class="p-2 text-muted" href="{!! route('lenguage-glossary',compact('lenguage')) !!}">{{$lenguage->name}}</a>
       @endforeach
-      {{-- <a class="p-2 text-muted" href="#">U.S.</a>
-      <a class="p-2 text-muted" href="#">Technology</a>
-      <a class="p-2 text-muted" href="#">Design</a>
-      <a class="p-2 text-muted" href="#">Culture</a>
-      <a class="p-2 text-muted" href="#">Business</a>
-      <a class="p-2 text-muted" href="#">Politics</a>
-      <a class="p-2 text-muted" href="#">Opinion</a>
-      <a class="p-2 text-muted" href="#">Science</a>
-      <a class="p-2 text-muted" href="#">Health</a>
-      <a class="p-2 text-muted" href="#">Style</a>
-      <a class="p-2 text-muted" href="#">Travel</a> --}}
     </nav>
   </div>
 
@@ -25,8 +14,6 @@
     <div class="col-md-6 col-lg-6 px-0">
       <h1 class="display-4 font-italic">Welcome to mini-glossary app test</h1>
       <p class="lead my-3">I hope you enjoy and understand this test.</p>
-
-      {{-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> --}}
     </div>
     <div class="col-lg-6 col-md-2 col-sm-0 px-0 py-10" style="background: url('/img/jumbo.svg'); background-size: auto; background-repeat:no-repeat; background-position:right;" ></div>
   </div>
@@ -118,8 +105,8 @@
       </div><!-- /.blog-post --> --}}
 
       <nav class="blog-pagination">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+        {{-- <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled" href="#">Newer</a> --}}
       </nav>
 
     </div><!-- /.blog-main -->

@@ -22,4 +22,9 @@ class Glossary extends Model
      return $this->belongsTo(User::class);
   }
 
+  public function lenguage()
+  {
+    return $this->belongsTo(Lenguage::class,'lenguage_id');
+  }
+
 }

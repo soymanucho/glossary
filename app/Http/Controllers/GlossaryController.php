@@ -28,6 +28,16 @@ class GlossaryController extends Controller
       $glossaries = Glossary::where('user_id',$user->id)->with('subjects')->get();
       return view('glossary.byUser',compact('glossaries','user'));
     }
+    public function byLenguage(Lenguage $lenguage)
+    {
+      $glossaries = Glossary::where('lenguage_id', $lenguage->id)->orderBy('created_at', 'desc')->paginate(10);
+      // $glossaries = Glossary::whereHas('terms', function($query) use ($lenguage) {
+      //     return $query->whereHas('lenguage', function($query) use ($lenguage) {
+      //       return $query->where('lenguage_id', $lenguage->id);
+      //     });
+      // })->orderBy('created_at', 'desc')->paginate(10);
+      return view('glossary.index',compact('glossaries'));
+    }
     public function search(Request $request)
     {
       $search = $request->search;
@@ -84,6 +94,7 @@ class GlossaryController extends Controller
       $glossary = New Glossary();
       $glossary->title = $request->title;
       $glossary->description = $request->description;
+      $glossary->lenguage_id = $request->lenguage_id;
       $glossary->user_id = Auth::user()->id;
 
       $glossary->save();

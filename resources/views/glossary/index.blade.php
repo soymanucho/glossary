@@ -12,7 +12,7 @@
             </h3>
             <div class="mb-1 text-muted"></div>
             <p class="card-text mb-auto">You want to create some new stuff?</p>
-            <a class="badge badge-pill badge-success" href="{!! route('new-glossary') !!}">Create new glossary</a>
+            <a class="badge badge-pill badge-success fancybox" href="{!! route('new-glossary') !!}">Create new glossary</a>
           </div>
       </div>
     @else

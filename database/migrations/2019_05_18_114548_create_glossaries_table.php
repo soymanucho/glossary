@@ -18,11 +18,13 @@ class CreateGlossariesTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('lenguage_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
         Schema::table('glossaries', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('lenguage_id')->references('id')->on('lenguages');
         });
     }
 

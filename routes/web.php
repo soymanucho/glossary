@@ -27,6 +27,7 @@ Route::post('/glossary/create', 'GlossaryController@store')->name('store-glossar
 
 Route::get('/glossary/search', 'GlossaryController@search')->name('search-glossary');
 Route::get('/user/{user}/glossaries', 'GlossaryController@byUser')->name('user-glossaries');
+Route::get('/lenguage/{lenguage}/glossaries', 'GlossaryController@byLenguage')->name('lenguage-glossary');
 
 Route::get('/term/{term}/translation', 'TranslationController@show')->name('show-translation');
 Route::get('/term/{term}/translation/new', 'TranslationController@create')->name('new-translation');
