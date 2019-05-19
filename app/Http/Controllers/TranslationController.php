@@ -3,7 +3,9 @@
 namespace glossary\Http\Controllers;
 
 use glossary\Translation;
+use glossary\Lenguage;
 use glossary\Term;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TranslationController extends Controller
@@ -23,9 +25,10 @@ class TranslationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Term $term)
     {
-        //
+      $lenguages = Lenguage::all();
+      return view('translation.newTranslation',compact('lenguages','term'));
     }
 
     /**
@@ -34,9 +37,39 @@ class TranslationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Term $term)
     {
-        //
+      $this->validate(
+          $request,
+          [
+              'name' => 'required|max:60',
+              'definition' => 'required|max:150',
+              'lenguage_id'=> 'required|exists:lenguages,id',
+          ],
+          [
+          ],
+          [
+              'name' => 'name',
+              'definition' => 'definition',
+              'lenguage_id' => 'lenguage',
+          ]
+      );
+
+      $term = Term::where('id',$term->id)->first();
+      $user = Auth::user();
+
+      $translatedTerm = New Term();
+      $translatedTerm->name = $request->name;
+      $translatedTerm->definition = $request->definition;
+      $translatedTerm->lenguage_id = $request->lenguage_id;
+      $translatedTerm->save();
+      // $translatedTerm->translations->attach($term);
+      $term->translations()->create([
+        'dest_term_id' => $translatedTerm->id,
+        'user_id'=> $user->id,
+      ]);
+      $term->save();
+      return redirect()->route('show-translation', compact('term'));
     }
 
     /**

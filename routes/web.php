@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/glossary/{glossary}/detail', 'GlossaryController@show')->name('show-glossary');
+Route::get('/glossary/all', 'GlossaryController@index')->name('index-glossary');
 Route::get('/glossary/create', 'GlossaryController@create')->name('new-glossary');
 Route::post('/glossary/create', 'GlossaryController@store')->name('store-glossary');
 

@@ -17,7 +17,7 @@ class Term extends Model
   }
   public function translations()
   {
-     return $this->hasMany(Translation::class,'orig_term_id');
+     return $this->hasMany(Translation::class,'term_id');
   }
   public function lenguage()
   {

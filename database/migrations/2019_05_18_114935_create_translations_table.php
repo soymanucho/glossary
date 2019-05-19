@@ -15,14 +15,14 @@ class CreateTranslationsTable extends Migration
     {
         Schema::create('translations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('orig_term_id')->unsigned();
+            $table->bigInteger('term_id')->unsigned();
             $table->bigInteger('dest_term_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });
         Schema::table('translations', function (Blueprint $table) {
-            $table->foreign('orig_term_id')->references('id')->on('terms');
+            $table->foreign('term_id')->references('id')->on('terms');
             $table->foreign('dest_term_id')->references('id')->on('terms');
             $table->foreign('user_id')->references('id')->on('users');
         });

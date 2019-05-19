@@ -6,8 +6,9 @@ use glossary\Glossary;
 use glossary\User;
 use glossary\Lenguage;
 use glossary\Subject;
-use Illuminate\Support\Facades\Auth;
 use glossary\Term;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class GlossaryController extends Controller
@@ -19,17 +20,27 @@ class GlossaryController extends Controller
      */
     public function index()
     {
-        //
+      $glossaries = Glossary::orderBy('created_at','desc')->paginate(10);
+      return view('glossary.index',compact('glossaries'));
     }
     public function byUser(User $user)
     {
       $glossaries = Glossary::where('user_id',$user->id)->with('subjects')->get();
       return view('glossary.byUser',compact('glossaries','user'));
     }
-    public function search($text)
+    public function search(Request $request)
     {
-      $glossaries = Glossary::where('user_id',$user->id)->with('subjects')->get();
-      return view('glossary.byUser',compact('glossaries','user'));
+      $search = $request->search;
+      $glossaries = Glossary::where('title', 'LIKE', '%' .$search. '%') //Give me this album if its title matches the input
+    // I need this album if any of its user's name matches the given input
+    ->orWhereHas('terms', function($q) use ($search) {
+        return $q->where('name', 'LIKE', '%' . $search . '%')->orWhere('definition','LIKE','%' . $search . '%');
+    })
+    // I need this album if any of its tracks' title matches the given input
+    ->orWhereHas('subjects', function($q) use ($search) {
+        return $q->where('name', 'LIKE', '%'. $search . '%');
+    })->paginate(10)->appends(Input::except('page'));
+      return view('glossary.index',compact('glossaries'));
     }
 
     /**

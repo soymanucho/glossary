@@ -26,11 +26,11 @@
 
         <p>{{$term->definition}}</p>
         <hr>
-        <h2>Translations: <small> <a class="badge badge-pill badge-success" href="{!! route('new-translation',compact('term')) !!}">Create new translation</a> </small></h2>
+        <h2>Translations: <small> <a class="badge badge-pill badge-success fancybox small" href="{!! route('new-translation',compact('term')) !!}">Create new translation</a> </small></h2>
         @foreach ($term->translations as $translation)
           {{-- {{dd($term)}} --}}
-          <h3>{{$translation->destTerm->name}} <span style="color:{{$translation->destTerm->lenguage->color}}">{{$translation->destTerm->lenguage->name}}</span> </h3>
-          <p>{{$translation->destTerm->definition}}</p>
+          <h3 class="ml-1">{{$loop->iteration}}. {{$translation->destTerm->name}} <span style="color:{{$translation->destTerm->lenguage->color}}">{{$translation->destTerm->lenguage->name}}</span> </h3>
+          <p  class="ml-1">{{$translation->destTerm->definition}}</p>
         @endforeach
 
       </div><!-- /.blog-post -->
