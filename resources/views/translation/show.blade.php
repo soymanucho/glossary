@@ -16,8 +16,8 @@
 @section('content')
   <div class="row">
     <div class="col-md-8 blog-main">
-      <h3 class="pb-3 mb-4 font-italic border-bottom">
-        Original lenguage <span style="color:{{$term->lenguage->color}}">{{$term->lenguage->name}}</span>
+      <h3 class="pb-3 mb-4 mt-3 font-italic border-bottom">
+        Original lenguage <span><a style="color:{{$term->lenguage->color}}" href="{!! route('lenguage-glossary',['lenguage'=>$term->lenguage]) !!}">{{$term->lenguage->name}}</a></span>
       </h3>
 
       <div class="blog-post">

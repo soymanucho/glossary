@@ -16,13 +16,13 @@
 @section('content')
   <div class="row">
     <div class="col-md-8 blog-main">
-      <h3 class="pb-3 mb-4 font-italic border-bottom">
-        Original lenguage <span style="color:{{$glossary->terms()->first()->lenguage->color}}">{{$glossary->terms->first()->lenguage->name}}</span>
+      <h3 class="pb-3 mt-3 mb-4 font-italic border-bottom">
+        Original lenguage <span><a style="color:{{$glossary->terms()->first()->lenguage->color}}" href="{!! route('lenguage-glossary',['lenguage'=>$glossary->terms()->first()->lenguage]) !!}">{{$glossary->terms->first()->lenguage->name}}</a></span>
       </h3>
 
       <div class="blog-post">
         <h2 class="blog-post-title">{{$glossary->title}}</h2>
-        <p class="blog-post-meta">{{ \Carbon\Carbon::parse($glossary->created_at)->toFormattedDateString()}} by <a href="#">{{$glossary->user->name}}</a></p>
+        <p class="blog-post-meta">{{ \Carbon\Carbon::parse($glossary->created_at)->toFormattedDateString()}} by <a href="{!! route('user-glossaries',['user'=>$glossary->user]) !!}">{{$glossary->user->name}}</a></p>
 
         <p>{{$glossary->description}}</p>
         <hr>
