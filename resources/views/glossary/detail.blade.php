@@ -60,10 +60,10 @@
       <div class="p-3">
         <h4 class="font-italic">Follow us on:</h4>
         <ol class="list-unstyled">
-          <li><a href="https://www.github.com/eclavelr">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/company/proz-com/">LinkedIn</a></li>
-          <li><a href="https://twitter.com/prozcom">Twitter</a></li>
-          <li><a href="https://www.facebook.com/prozdotcom">Facebook</a></li>
+          <li><a href="https://www.github.com/soymanucho">GitHub</a></li>
+          <li><a href="">LinkedIn</a></li>
+          <li><a href="">Twitter</a></li>
+          <li><a href="">Facebook</a></li>
         </ol>
       </div>
     </aside><!-- /.blog-sidebar -->
