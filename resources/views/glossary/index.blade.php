@@ -19,7 +19,7 @@
     @foreach ($glossaries as $glossary)
       <div class="card" >
           <div class="card-body" >
-            <strong class="d-inline-block mb-2" style="color:{{$glossary->terms()->first()->lenguage->color}}">{{$glossary->terms()->first()->lenguage->name}}</strong>
+            <strong class="d-inline-block mb-2" style="color:{{$glossary->lenguage()->color}}">{{$glossary->lenguage()->name}}</strong>
             <h3 class="mt-1">
               <a class="text-dark" href="{!! route('show-glossary',compact('glossary')) !!}">{{$glossary->title}}{{-- @if ($loop->iteration <=10) <span class="badge badge-pill badge-primary">Latest</span> @endif--}}</a>
             </h3>
