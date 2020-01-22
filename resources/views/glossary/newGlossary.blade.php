@@ -64,7 +64,7 @@ $(document).ready(function() {
       var fName = $("<label for=\"term_name_"+intId+"\">Name #"+intId+"</label> <input name=\"term_name_"+intId+"\" id=\"term_name_"+intId+"\" type=\"text\" placeholder=\"Name\" class=\"form-control\" />");
       var fDef= $("<label for=\"term_def_"+intId+"\">Definition #"+intId+"</label><input name=\"term_def_"+intId+"\" id=\"term_def_"+intId+"\" type=\"text\" placeholder=\"Definition\" class=\"form-control\" />");
       // var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-      var removeButton = $("<input type=\"button\" class=\"remove btn btn-danger\" value=\"remove\" />");
+      var removeButton = $("<input type=\"button\" class=\"remove btn btn-danger mt-1\" value=\"remove\" />");
       removeButton.click(function() {
           $(this).parent().remove();
       });
