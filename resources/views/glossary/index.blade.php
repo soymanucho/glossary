@@ -23,7 +23,7 @@
             <h3 class="mt-1">
               <a class="text-dark" href="{!! route('show-glossary',compact('glossary')) !!}">{{$glossary->title}}{{-- @if ($loop->iteration <=10) <span class="badge badge-pill badge-primary">Latest</span> @endif--}}</a>
             </h3>
-            <div class="mb-1 text-muted" data-toggle="tooltip" data-placement="right" title="{{$glossary->created_at->format('d/m/Y h:m')}}">{{$glossary->created_at->diffForHumans()}}</div>
+            <div class="mb-1 text-muted" data-toggle="tooltip" data-placement="left" title="{{$glossary->created_at->format('d/m/Y h:m')}}">{{$glossary->created_at->diffForHumans()}}</div>
             <p class="card-text mb-auto">{{$glossary->description}}</p>
             <a href="{!! route('show-glossary',compact('glossary')) !!}">Continue reading...</a>
           </div>
